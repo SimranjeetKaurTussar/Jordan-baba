@@ -4,18 +4,20 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
-
         {/* LEFT */}
         <div className="footer-col brand">
           <h2 className="logo">
-            <img src="	https://jordanbaba.com/assets/jordanbaba/jordanbaba-logo-footer.svg" alt="footer" width={243} height={48} />
-            {/* <span>JOR</span>DAN<span>BABA</span> */}
+            <img
+              src="	https://jordanbaba.com/assets/jordanbaba/jordanbaba-logo-footer.svg"
+              alt="footer"
+              width={243}
+              height={48}
+            />
           </h2>
-          <p className="tagline">ECOMMERCE SOLUTION AT YOUR FINGERTIPS</p>
 
           <p className="desc">
-            Our company's founders & CEO are electrical and
-            mechanical engineers and businessman
+            Our company's founders & CEO are electrical and mechanical engineers
+            and businessman
           </p>
 
           <p className="email">info@jordanbaba.com</p>
@@ -59,7 +61,6 @@ const Footer = () => {
           <input type="email" placeholder="Enter Email" />
           <button>Submit</button>
         </div>
-
       </div>
 
       {/* BOTTOM */}
