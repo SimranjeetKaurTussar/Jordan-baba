@@ -1,0 +1,252 @@
+// src/styles/MainHeader.scss
+@import '../../styles/global.scss';
+
+.main-header {
+  background: $bg-white;
+  padding: 1.5rem 0;
+  box-shadow: $shadow-sm;
+  position: relative;
+  z-index: 40;
+
+  .container {
+    max-width: 1400px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 200px 1fr 350px;
+    gap: 2rem;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  // Logo
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__brand-name {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 0.25rem;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  &__brand-red {
+    color: $primary-color;
+    display: inline;
+  }
+
+  &__brand-green {
+    color: $secondary-color;
+    display: inline;
+  }
+
+  &__tagline {
+    font-size: 9px;
+    color: $text-light;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  // Search Bar
+  &__search {
+    display: flex;
+    align-items: stretch;
+    border: 2px solid $border-light;
+    border-radius: 50px;
+    overflow: hidden;
+    background: $bg-white;
+    @include transition(all);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &.active {
+      border-color: $primary-color;
+      box-shadow: 0 4px 16px rgba(211, 47, 47, 0.15);
+    }
+
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+
+  &__search-input {
+    flex: 1;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 14px;
+    color: $text-dark;
+    background: transparent;
+    outline: none;
+
+    &::placeholder {
+      color: $text-light;
+    }
+  }
+
+  &__search-camera {
+    background: $bg-white;
+    border: none;
+    border-left: 1px solid $border-light;
+    border-right: 1px solid $border-light;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $text-gray;
+    @include transition;
+
+    &:hover {
+      color: $primary-color;
+      background: $bg-light;
+    }
+  }
+
+  &__search-btn {
+    background: $primary-color;
+    color: $bg-white;
+    border: none;
+    padding: 0 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+    @include transition;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+
+    &:active {
+      background: darken($primary-color, 15%);
+    }
+  }
+
+  // Action Items
+  &__actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      gap: 0.75rem;
+      justify-content: flex-end;
+    }
+  }
+}
+
+// Action Item Component
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  flex-direction: column;
+  @include transition;
+
+  &:hover {
+    .action-item__icon {
+      background-color: rgba(211, 47, 47, 0.1) !important;
+      color: $primary-color;
+    }
+
+    .action-item__subtitle {
+      color: $text-dark;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: $text-gray;
+    flex-shrink: 0;
+    @include transition;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.2;
+  }
+
+  &__title {
+    font-size: 11px;
+    color: $text-light;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: $text-gray;
+    @include transition;
+  }
+
+  // Highlight Variant
+  &--highlight {
+    .action-item__icon {
+      background-color: #ffe8e8;
+      color: $primary-color;
+    }
+
+    .action-item__subtitle {
+      color: $text-dark;
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+
+    &__icon {
+      width: 32px;
+      height: 32px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 12px;
+    }
+
+    &__title {
+      font-size: 10px;
+    }
+  }
+}
