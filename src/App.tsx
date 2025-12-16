@@ -39,7 +39,7 @@ function App() {
         <SupportLiveChat />
       </main>
       <footer>
-        <Footer />
+        {/* <Footer /> */}
       </footer>
     </div>
   );

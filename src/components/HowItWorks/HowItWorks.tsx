@@ -29,27 +29,24 @@ const STEPS = [
   },
 ];
 
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.9,
-      ease: "easeOut" as const
-    } 
+const cardVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95, y: 20 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
   },
 };
-const fadeInDown: Variants = {
-  hidden: { opacity: 0, y: -60 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.9, 
-      ease: "easeOut" as const
-    } 
-  },
+
+const renderTitle = (title: string) => {
+  const [first, ...rest] = title.split(' ');
+  return (
+    <>
+      <span className="text-red">{first}</span>{' '}
+      <span className="text-black">{rest.join(' ')}</span>
+    </>
+  );
 };
 
 const HowItWorks: React.FC = () => {
@@ -68,93 +65,64 @@ const HowItWorks: React.FC = () => {
           </p>
         </div>
 
-        {/* Snake / Wave Container */}
+        {/* Process Wrapper with SVG Connectors + Cards */}
         <div className="process-wrapper">
-          
-          {/* Background Wave Line (SVG) */}
-          <div className="wave-bg">
-            <svg viewBox="0 0 1200 340" preserveAspectRatio="none">
-              {/* The gray path */}
-              <path
-                d="M 20,200 
-                   C 20,200 60,20 280,20 
-                   C 500,20 500,320 720,320 
-                   C 940,320 940,20 1160,20 
-                   L 1180,20"
-                fill="none"
-                stroke="#e0e0e0"
-                strokeWidth="20"
-                strokeLinecap="round"
-              />
-              {/* Start Dot */}
-              <circle cx="22" cy="200" r="20" fill="#ddd" />
-              {/* End Dot */}
-              <circle cx="1170" cy="20" r="20" fill="#ddd" />
-            </svg>
-          </div>
+          {/* SVG Background with connection lines */}
+          <svg className="svg-connector" viewBox="0 0 1200 500" preserveAspectRatio="none">
+            {/* Left vertical line connecting steps 1 and 2 */}
+            <line x1="150" y1="0" x2="150" y2="500" stroke="#e5e5e5" strokeWidth="16" strokeLinecap="round" />
+            {/* Middle vertical line connecting steps 2 and 3 */}
+            <line x1="600" y1="0" x2="600" y2="500" stroke="#e5e5e5" strokeWidth="16" strokeLinecap="round" />
+            {/* Right vertical line connecting steps 3 and 4 */}
+            <line x1="1050" y1="0" x2="1050" y2="500" stroke="#e5e5e5" strokeWidth="16" strokeLinecap="round" />
+            
+            {/* Connecting curves between columns */}
+            {/* Arch from step 1 to step 2 (top) */}
+            <path d="M 150,80 Q 150,40 300,40 Q 450,40 600,80" fill="none" stroke="#e5e5e5" strokeWidth="16" strokeLinecap="round" />
+            
+            {/* Curve from step 2 to step 3 (bottom) */}
+            <path d="M 600,420 Q 600,460 750,460 Q 900,460 1050,420" fill="none" stroke="#e5e5e5" strokeWidth="16" strokeLinecap="round" />
+            
+            {/* Start dot */}
+            <circle cx="150" cy="500" r="14" fill="#e0e0e0" />
+          </svg>
 
-          {/* Steps Grid */}
+          {/* Steps Grid with Cards */}
           <div className="steps-grid">
             {STEPS.map((step) => {
               const isTop = step.position === 'top';
-              
-              return (
-                <div key={step.id} className={`step-item ${isTop ? 'pos-top' : 'pos-bottom'}`}>
-                  
-                  {/* If position is Top: Number first, then Content */}
-                  {isTop ? (
-                    <>
-                      <motion.div 
-                        className="step-number"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInDown} // Number comes from top
-                      >
-                        {step.id}
-                      </motion.div>
-                      <div className="spacer" />
-                      <motion.div 
-                        className="step-content"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInUp} // Content comes from bottom
-                      >
-                        <h4 className="step-title" dangerouslySetInnerHTML={{ 
-                          __html: step.title.replace(' ', ' <span class="highlight">') + '</span>' 
-                        }} />
-                        <p className="step-desc">{step.desc}</p>
-                      </motion.div>
-                    </>
-                  ) : (
-                    // If position is Bottom: Content first, then Number
-                    <>
-                      <motion.div 
-                        className="step-content"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInDown} // Content comes from top
-                      >
-                        <h4 className="step-title" dangerouslySetInnerHTML={{ 
-                          __html: step.title.replace(' ', ' <span class="highlight">') + '</span>' 
-                        }} />
-                        <p className="step-desc">{step.desc}</p>
-                      </motion.div>
-                      <div className="spacer" />
-                      <motion.div 
-                        className="step-number"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInUp} // Number comes from bottom
-                      >
-                        {step.id}
-                      </motion.div>
-                    </>
-                  )}
+              const numColorClass = isTop ? 'num-red' : 'num-black';
 
+              return (
+                <div
+                  key={step.id}
+                  className={`step-item ${isTop ? 'pos-top' : 'pos-bottom'}`}
+                >
+                  <motion.div
+                    className={`step-card ${numColorClass}`}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-50px' }}
+                    variants={cardVariants}
+                  >
+                    {isTop ? (
+                      <>
+                        <div className="step-number">{step.id}</div>
+                        <div className="step-content">
+                          <h4 className="step-title">{renderTitle(step.title)}</h4>
+                          <p className="step-desc">{step.desc}</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="step-content">
+                          <h4 className="step-title">{renderTitle(step.title)}</h4>
+                          <p className="step-desc">{step.desc}</p>
+                        </div>
+                        <div className="step-number">{step.id}</div>
+                      </>
+                    )}
+                  </motion.div>
                 </div>
               );
             })}
