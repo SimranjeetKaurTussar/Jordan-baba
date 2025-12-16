@@ -1,5 +1,5 @@
 // src/styles/MainHeader.scss
-@import '../../styles/global.scss';
+@import "../../styles/globals.scss";
 
 .main-header {
   background: $bg-white;
@@ -27,36 +27,8 @@
   // Logo
   &__logo {
     flex-shrink: 0;
-  }
-
-  &__brand-name {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    margin-bottom: 0.25rem;
-
-    @media (max-width: 768px) {
-      font-size: 24px;
-    }
-  }
-
-  &__brand-red {
-    color: $primary-color;
-    display: inline;
-  }
-
-  &__brand-green {
-    color: $secondary-color;
-    display: inline;
-  }
-
-  &__tagline {
-    font-size: 9px;
-    color: $text-light;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    font-weight: 700;
-    margin: 0;
+    display: flex;
+    align-items: center;
   }
 
   // Search Bar
@@ -125,6 +97,13 @@
     gap: 0.5rem;
     font-size: 14px;
     @include transition;
+    @media (max-width: 768px) {
+      gap: 0;
+      padding: 0 0.8rem;
+      span {
+        display: none;
+      }
+    }
 
     &:hover {
       background: darken($primary-color, 10%);

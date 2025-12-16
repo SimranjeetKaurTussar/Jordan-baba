@@ -1,5 +1,5 @@
 // src/styles/TopBar.scss
-@import '../../styles/global.scss';
+@import '../../styles/globals.scss';
 
 .topbar {
   background-color: $bg-dark;
@@ -211,14 +211,21 @@
     &__nav-left {
       gap: 1rem;
       font-size: 11px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     &__right {
       gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     &__socials {
       padding-left: 1rem;
+    }
+    &__wrapper{
+      flex-direction: column;
     }
   }
 
