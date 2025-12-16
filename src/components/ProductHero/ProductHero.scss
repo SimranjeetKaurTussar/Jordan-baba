@@ -1,0 +1,98 @@
+
+@import '../../styles/globals.scss'; // optional; remove if not present
+
+.product-hero {
+  width: 100%;
+  padding: 4.5rem 0 6rem;
+  background: #fff;
+  color: #111;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  &__header {
+    margin-bottom: 3rem;
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+
+    & .product-hero__title {
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 800;
+      color: #111;
+      margin: 0 auto 0.6rem;
+      max-width: 980px;
+    }
+
+    & .product-hero__subtitle {
+      font-size: 15px;
+      color: #6b6b6b;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+  }
+
+  &__visual-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .device {
+    position: relative;
+    width: min(760px, 86%);
+    max-width: 820px;
+    border-radius: 20px;
+    transform-origin: center;
+    transition: transform 220ms ease;
+
+    &__screen {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    &__screen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 6px 30px rgba(15,15,15,0.06);
+      object-fit: contain;
+      background: #fff;
+    }
+  }
+
+  /* responsive */
+  @media (max-width: 1024px) {
+    padding: 3.5rem 0 4.5rem;
+
+    .product-hero__header .product-hero__title {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2.5rem 0 3.5rem;
+
+    .product-hero__header .product-hero__title {
+      font-size: 22px;
+    }
+
+    .device {
+      padding: 18px;
+      &__base { bottom: -18px; height: 14px; width: 65%; }
+      &__shadow { bottom: -28px; height: 28px; }
+    }
+  }
+}

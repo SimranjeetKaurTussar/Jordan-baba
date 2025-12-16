@@ -11,10 +11,10 @@ const HeroSection = () => {
       <div className="hero-banner">
         <div className="hero-banner__bg">
           <img 
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop" 
+            src="https://jordanbaba.com/assets/images/landing-page/sellerhomepage2.jpg" 
             alt="Business Meeting" 
           />
-          <div className="hero-banner__overlay" />
+          {/* <div className="hero-banner__overlay" /> */}
         </div>
 
         <div className="container">
