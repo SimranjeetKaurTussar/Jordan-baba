@@ -3,6 +3,7 @@ import React from 'react';
 import TopBar from './components/topBar/TopBar';
 import MainHeader from './components/mainHeader/MainHeader';
 import CategoryBar from './components/CategoryBar/CategoryBar';
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
            </div>
         </div>
       </main>
+      <footer><Footer/></footer>
+          
     </div>
   );
 }
