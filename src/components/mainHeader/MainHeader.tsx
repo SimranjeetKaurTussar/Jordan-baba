@@ -14,11 +14,7 @@ const MainHeader = () => {
           
           {/* Logo Section */}
           <div className="main-header__logo">
-            <h1 className="main-header__brand-name">
-              <span className="main-header__brand-red">JORDAN</span>
-              <span className="main-header__brand-green">BABA</span>
-            </h1>
-            <p className="main-header__tagline">ECOMMERCE SOLUTION AT YOUR FINGERTIPS</p>
+              <img src="https://jordanbaba.com/assets/jordanbaba/jordanbaba-logo.svg" alt="JORDANBABA" />
           </div>
 
           {/* Search Bar */}
