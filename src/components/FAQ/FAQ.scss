@@ -1,0 +1,144 @@
+// Colors (adjust to your theme)
+$accent: #d32f2f;
+$text: #222;
+$muted: #666;
+$bg: #fafafa;
+$border: #eee;
+
+.faq-section {
+  padding: 3.5rem 1rem;
+  background: #fff;
+}
+
+.faq-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: $text;
+
+  &--accent {
+    color: $accent;
+    margin-left: 6px;
+  }
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Single FAQ item */
+.faq-item {
+  border-top: 1px solid $border;
+  .faq-row {
+    background: transparent;
+  }
+
+  &.is-open {
+    .faq-button {
+      background: #fafafa;
+    }
+  }
+}
+
+.faq-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: background 180ms ease;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($accent, 0.08);
+  }
+
+  .faq-badge {
+    width: 6px;
+    height: 48px;
+    background: $accent;
+    border-radius: 2px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  .faq-q {
+    flex: 1;
+    color: $text;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .faq-chevron {
+    color: #777;
+    transform-origin: center;
+    transition: transform 220ms ease;
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+.faq-item.is-open {
+  .faq-chevron {
+    transform: rotate(180deg);
+  }
+}
+
+/* Panel */
+.faq-panel-wrap {
+  overflow: hidden;
+}
+
+.faq-panel {
+  padding: 12px 18px 18px 18px;
+  border-bottom: 1px solid $border;
+  background: #fff;
+  .faq-a {
+    color: $muted;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* Small screens adjustments */
+@media (max-width: 680px) {
+  .faq-section {
+    padding: 1.5rem 1rem;
+  }
+  .faq-title {
+    font-size: 26px;
+  }
+
+  .faq-button {
+    padding: 12px 14px;
+    .faq-q {
+      font-size: 15px;
+    }
+    .faq-badge {
+      height: 44px;
+    }
+  }
+
+  .faq-panel {
+    padding: 10px 14px 14px;
+    .faq-a {
+      font-size: 14px;
+    }
+  }
+}

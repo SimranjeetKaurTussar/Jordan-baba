@@ -1,0 +1,206 @@
+// variables
+$accent: #d32f2f;
+$text: #222;
+$muted: #666;
+$bg: #fff;
+$soft-border: #f1efef;
+
+.support-livechat {
+  position: relative;
+  padding: 3.5rem 1rem;
+  background: $bg;
+  overflow: hidden;
+
+  .support-bg {
+    position: absolute;
+    right: 4%;
+    top: 10%;
+    width: 540px;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+    transform: translateY(-10%);
+  }
+
+  .support-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 560px;
+    gap: 48px;
+    align-items: start;
+    padding: 0 18px;
+  }
+
+  /* LEFT */
+  .support-left {
+    .support-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: $text;
+      margin: 0 0 8px;
+
+      .support-title--big {
+        color: $accent;
+        margin-right: 8px;
+      }
+
+      .support-accent {
+        color: $accent;
+        margin-left: 6px;
+      }
+    }
+
+    .support-lead {
+      color: $accent;
+      font-weight: 700;
+      margin: 8px 0 12px;
+      font-size: 15px;
+    }
+
+    .support-paragraph {
+      color: $muted;
+      line-height: 1.8;
+      font-size: 15px;
+      margin: 0 0 18px;
+      max-width: 720px;
+    }
+
+    .support-subhead {
+      color: $accent;
+      font-weight: 700;
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    .support-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: $muted;
+      font-size: 15px;
+      line-height: 1.9;
+
+      &__item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin: 6px 0;
+
+        .dot {
+          display: inline-block;
+          min-width: 18px;
+          color: $muted;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  /* RIGHT */
+  .support-right {
+    .chat-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-card__head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .chat-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      color: $accent;
+
+      img { width: 36px; height: 36px; object-fit: contain; display: block;}
+      svg { display: block; }
+    }
+
+    .chat-titlewrap {
+      .chat-small {
+        font-size: 13px;
+        color: $muted;
+      }
+      .chat-title {
+        margin: 2px 0 0;
+        font-size: 28px;
+        font-weight: 800;
+        color: $accent;
+      }
+    }
+
+    .chat-body {
+      .chat-highlight {
+        color: $accent;
+        font-weight: 700;
+        margin: 6px 0;
+      }
+
+      .chat-desc {
+        color: $muted;
+        line-height: 1.7;
+        margin: 6px 0 10px;
+      }
+
+      .chat-key {
+        color: $accent;
+        font-weight: 700;
+        margin: 6px 0;
+        font-size: 15px;
+      }
+
+      .chat-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: $muted;
+        font-size: 15px;
+        line-height: 1.9;
+
+        &__item {
+          display: flex;
+          gap: 12px;
+          align-items: flex-start;
+          margin: 6px 0;
+
+          .chat-dot {
+            min-width: 18px;
+            color: $muted;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .support-inner {
+      grid-template-columns: 1fr 420px;
+    }
+    .support-left .support-title { font-size: 32px; }
+    .support-right .chat-title { font-size: 24px; }
+  }
+
+  @media (max-width: 820px) {
+    padding: 2.25rem 10px;
+    .support-inner {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .support-right { order: -1; } // show right card first on small devices (optional)
+    .support-bg { display: none; }
+    .support-left .support-title { font-size: 28px; }
+    .support-right .chat-title { font-size: 22px; }
+  }
+}

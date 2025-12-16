@@ -3,13 +3,13 @@
 
 .main-header {
   background: $bg-white;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
   box-shadow: $shadow-sm;
   position: relative;
   z-index: 40;
 
   .container {
-    max-width: 1400px;
+    max-width: 1600px;
   }
 
   &__wrapper {

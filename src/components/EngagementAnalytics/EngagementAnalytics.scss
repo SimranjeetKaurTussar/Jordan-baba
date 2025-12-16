@@ -1,0 +1,84 @@
+@import "../../styles/globals.scss"; // optional
+
+.engagement-analytics {
+  padding: 4.5rem 0;
+  background: #fff;
+
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .ea-heading {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 1.75rem;
+    color: #222;
+
+    .highlight {
+      color: #d32f2f; // primary red
+      margin-left: 6px;
+    }
+  }
+
+  .ea-grid {
+    display: grid;
+    grid-template-columns: 1fr 560px;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .ea-chart-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .ea-copy {
+    .ea-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 0.75rem;
+    }
+    .ea-desc {
+      font-size: 13.5px;
+      color: #666;
+      line-height: 1.65;
+    }
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .engagement-analytics {
+    padding: 1.5rem 0;
+  }
+  .engagement-analytics .ea-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ea-chart-card svg {
+    height: 280px;
+  }
+}
+
+@media (max-width: 820px) {
+  .engagement-analytics .ea-grid {
+    grid-template-columns: 1fr;
+  }
+  .ea-copy {
+    padding-left: 0;
+    margin-top: 1.25rem;
+    text-align: left;
+  }
+  .ea-chart-card svg {
+    height: 240px;
+  }
+}

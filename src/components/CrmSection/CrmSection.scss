@@ -1,0 +1,151 @@
+@import '../../styles/globals.scss';
+
+.crm-section {
+  width: 100%;
+  padding: 6rem 0;
+  background-color: #fbfbfb; // Very light gray background to separate sections
+  overflow: hidden;
+
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+.crm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ============ LEFT: CAROUSEL ============ */
+.crm-visual {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.carousel-content {
+  flex: 1;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  min-height: 450px;
+
+  .carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Or 'contain' if you want to see the whole screenshot
+    object-position: top center;
+  }
+}
+
+.carousel-pagination {
+  display: flex;
+  gap: 10px;
+  
+  .pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &.active {
+      background: $primary-color; // Red
+      transform: scale(1.2);
+    }
+  }
+}
+
+/* ============ RIGHT: CONTENT ============ */
+.crm-content {
+  // Animation is handled inline by motion.div, styles here define layout
+}
+
+.crm-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.crm-desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+.crm-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  .icon-wrap {
+    margin-top: 2px;
+    color: $primary-color; // Red checkmark
+    flex-shrink: 0;
+  }
+
+  .text-wrap {
+    .feat-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.25rem;
+    }
+
+    .feat-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 992px) {
+  .crm-section {
+    padding: 1rem 0;
+  }
+  .crm-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .crm-content {
+    order: -1; // Put text above image on tablets? remove if you want image first
+    text-align: left;
+  }
+  .carousel-content{
+    min-height: 220px;
+  }
+  .carousel-frame {
+    aspect-ratio: auto;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crm-title {
+    font-size: 28px;
+  }
+  
+  .window-header {
+    display: none; // Hide window chrome on mobile for cleaner look
+  }
+}

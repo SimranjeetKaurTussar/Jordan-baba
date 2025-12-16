@@ -7,6 +7,13 @@ import HeroSection from './components/HeroSection/HeroSection';
 import Footer from './components/Footer/Footer';
 import ProductHero from './components/ProductHero/ProductHero';
 import FeaturesShowcase from './components/FeaturesShowcase/FeaturesShowcase';
+import HowItWorks from './components/HowItWorks/HowItWorks';
+import CrmSection from './components/CrmSection/CrmSection';
+import LiveChat from './components/LiveChat/LiveChat';
+import ProductCalculator from './components/ProductCalculator/ProductCalculator';
+import EngagementAnalytics from './components/EngagementAnalytics/EngagementAnalytics';
+import FAQ from './components/FAQ/FAQ';
+import SupportLiveChat from './components/SupportLiveChat/SupportLiveChat';
 
 function App() {
   return (
@@ -23,6 +30,13 @@ function App() {
         <HeroSection />
         <ProductHero />
         <FeaturesShowcase />
+        <HowItWorks />
+        <CrmSection />
+        <LiveChat />
+        <ProductCalculator />
+        <EngagementAnalytics />
+        <FAQ />
+        <SupportLiveChat />
       </main>
       <footer>
         <Footer />
