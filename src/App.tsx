@@ -1,5 +1,4 @@
 // App.tsx
-import React from 'react';
 import TopBar from './components/topBar/TopBar';
 import MainHeader from './components/mainHeader/MainHeader';
 import CategoryBar from './components/CategoryBar/CategoryBar';

@@ -29,6 +29,15 @@
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    img {
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      img {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
   }
 
   // Search Bar
