@@ -1,4 +1,4 @@
-@import '../../styles/globals.scss';
+@import "../../styles/globals.scss";
 
 $bg: #241f20;
 $muted: #bfb7b7;
@@ -19,18 +19,23 @@ $modal-button-color: #fff;
 $modal-button-hover-color: #f8f8f8;
 $modal-login-btn-bg: #e54b4b;
 
-
 .site-footer {
   background: $bg;
   color: $muted;
-  padding: 48px 0 0;
   font-family: inherit;
   position: relative;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin: 0;
+  margin-left:20px;
+  margin-right:20px;
 
   .container {
     max-width: $container-max;
     margin: 0 auto;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: 380px 1fr 1fr 360px;
     gap: 30px;
@@ -39,23 +44,23 @@ $modal-login-btn-bg: #e54b4b;
 
   // BRAND COLUMN
   .brand-col {
-    img{
+    img {
       width: 220px;
       height: auto;
     }
     .brand-desc {
-      color: $muted;
-      font-size: 13px;
-      line-height: 1.6;
-      margin-bottom: 12px;
+      color: $bg-white;
+      font-size: 12px;
+      margin-bottom: 5px;
       max-width: 320px;
+      margin-top: 5px;
     }
 
     .brand-email {
       color: $accent;
       display: inline-block;
       margin-bottom: 18px;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .socials {
@@ -69,17 +74,22 @@ $modal-login-btn-bg: #e54b4b;
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         color: $muted;
         text-decoration: none;
-        transition: all .12s ease;
+        transition: all 0.12s ease;
 
-        svg { display: block; color: $muted; }
+        svg {
+          display: block;
+          color: $muted;
+        }
 
         &:hover {
-          border-color: rgba(255,255,255,0.14);
+          border-color: rgba(255, 255, 255, 0.14);
           color: $link-hover;
-          svg { color: $link-hover; }
+          svg {
+            color: $link-hover;
+          }
         }
       }
     }
@@ -95,13 +105,14 @@ $modal-login-btn-bg: #e54b4b;
       padding-bottom: 8px;
 
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 48px;
-        height: 3px;
+        width: 100px;
+        height: 2px;
         background: $accent;
+        border-radius:10px; 
       }
     }
 
@@ -109,15 +120,19 @@ $modal-login-btn-bg: #e54b4b;
       margin: 0;
       padding: 0;
       list-style: none;
-      font-size: 13px;
-      line-height: 2.6;
-
+      font-size: 12px;
+      li{
+        margin-bottom: 7px;
+      }
       li a {
-        color: $muted;
+        color: $bg-white;
         text-decoration: none;
-        transition: color .12s ease;
+        transition: color 0.12s ease;
 
-        &:hover { color: $link-hover; }
+
+        &:hover {
+          color: #d7282f;
+        }
       }
     }
   }
@@ -127,49 +142,38 @@ $modal-login-btn-bg: #e54b4b;
     .col-title {
       color: #fff;
       font-size: 16px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       position: relative;
-      padding-bottom: 8px;
-
-      &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 48px;
-        height: 3px;
-        background: $accent;
-      }
     }
 
     .subscribe-form {
       display: flex;
-      gap: 10px;
-      margin-top: 8px;
       justify-content: flex-start;
-      flex-direction: column;
 
       .input-email {
-        flex: 1;
         min-width: 0;
         padding: 10px 12px;
-        border-radius: 6px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
         border: none;
         outline: none;
-        font-size: 14px;
+        font-size: 12px;
       }
 
       .btn-submit {
         background: $accent;
         color: #fff;
         border: none;
-        padding: 10px 14px;
-        border-radius: 6px;
+        padding: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
         font-weight: 700;
         cursor: pointer;
         font-size: 14px;
 
-        &:hover { opacity: 0.95; }
+        &:hover {
+          opacity: 0.95;
+        }
       }
     }
   }
@@ -177,8 +181,8 @@ $modal-login-btn-bg: #e54b4b;
   // bottom separator and copyright row
   .site-footer__bottom {
     margin-top: 28px;
-    border-top: 1px solid rgba(255,255,255,0.04);
-    padding: 14px 0 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 10px;
     color: $muted;
 
     .container.small {
@@ -193,38 +197,47 @@ $modal-login-btn-bg: #e54b4b;
       justify-content: center;
       gap: 20px;
       align-items: center;
-      font-size: 13px;
+      font-size: 12px;
       color: $muted;
     }
 
     .bottom-right .privacy {
       color: $muted;
       text-decoration: none;
-      &:hover { color: $link-hover; }
+      &:hover {
+        color: $link-hover;
+      }
     }
   }
 
   // floating messenger stub
   .messenger-stub {
     position: fixed;
-    right: 18px;
-    bottom: 14px;
+    right: 20px;
+    bottom: 0;
     z-index: 9999;
-    background: #fff;
-    color: #000;
+    background: #ffe5e7;
+    color: #d7282f;
     padding: 8px 12px;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     display: inline-flex;
     gap: 8px;
     align-items: center;
-    border: 1px solid rgba(0,0,0,0.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     cursor: pointer;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+    min-width: 250px;
+    max-width: 250px;
+    font-weight: 600;
+    font-size: 16px;
 
-    svg { color: $accent; }
+    svg {
+      color: $accent;
+    }
 
     &:hover {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
     }
   }
 }
@@ -254,7 +267,7 @@ $modal-login-btn-bg: #e54b4b;
   width: 100%;
   max-width: 440px;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transform: scale(0.95);
   animation: scaleIn 0.3s ease forwards;
 }
@@ -351,7 +364,7 @@ $modal-login-btn-bg: #e54b4b;
   margin-top: 15px;
 
   .signup-link {
-    font-size: 14px;
+    font-size: 12px;
     color: $modal-text-color;
 
     .signup-btn {
@@ -384,19 +397,26 @@ $modal-login-btn-bg: #e54b4b;
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
-  from { transform: scale(0.95); }
-  to { transform: scale(1); }
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
 }
-
 
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
-    .site-footer .container {
+  .site-footer .container {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -405,9 +425,12 @@ $modal-login-btn-bg: #e54b4b;
     grid-template-columns: 1fr;
   }
 
-  .brand-desc { max-width: 100%; }
-  .subscribe-form { flex-direction: column; align-items: stretch; gap: 8px; }
-  .socials { margin-top: 12px; }
+  .brand-desc {
+    max-width: 100%;
+  }
+  .socials {
+    margin-top: 12px;
+  }
 
   .modal-content {
     margin: 10px;

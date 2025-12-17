@@ -135,7 +135,6 @@ export default function Footer(): JSX.Element {
             <h3 id="subscribe-heading" className="col-title">Subscribe</h3>
 
             <form className="subscribe-form" onSubmit={onSubmitSubscribe}>
-              <label htmlFor="footer-email" className="sr-only">Email address</label>
               <input
                 id="footer-email"
                 type="email"

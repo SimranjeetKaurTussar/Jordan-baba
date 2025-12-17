@@ -150,7 +150,7 @@
   border: none;
   cursor: pointer;
   text-align: center;
-  flex-direction: column;
+  // flex-direction: column;
   @include transition;
 
   &:hover {
