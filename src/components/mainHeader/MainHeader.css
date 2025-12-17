@@ -226,6 +226,7 @@ input, select, textarea {
   border: none;
   cursor: pointer;
   text-align: center;
+  flex-direction: column;
   transition: all 0.3s ease-in-out;
 }
 .action-item:hover .action-item__icon {
