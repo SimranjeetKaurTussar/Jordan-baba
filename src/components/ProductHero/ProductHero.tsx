@@ -26,7 +26,7 @@ const ProductHero: React.FC = () => {
           >
             <div className="device__screen">
               <img
-                src="https://img.sanishtech.com/u/b309211e63795c89bcdb8239d600c16a.png"
+                src="https://jordanbaba.com/assets/images/landing-page/live-chat-image.webp"
                 alt="product add mockup"
                 loading="lazy"
               />
