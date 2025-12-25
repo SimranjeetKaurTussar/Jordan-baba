@@ -30,8 +30,8 @@ $modal-login-btn-bg: #e54b4b;
   padding-right: 30px;
   padding-left: 30px;
   margin: 0;
-  margin-left:20px;
-  margin-right:20px;
+  margin-left: 20px;
+  margin-right: 20px;
 
   .container {
     max-width: $container-max;
@@ -113,7 +113,7 @@ $modal-login-btn-bg: #e54b4b;
         width: 100px;
         height: 2px;
         background: $accent;
-        border-radius:10px; 
+        border-radius: 10px;
       }
     }
 
@@ -122,14 +122,13 @@ $modal-login-btn-bg: #e54b4b;
       padding: 0;
       list-style: none;
       font-size: 12px;
-      li{
+      li {
         margin-bottom: 7px;
       }
       li a {
         color: $bg-white;
         text-decoration: none;
         transition: color 0.12s ease;
-
 
         &:hover {
           color: #d7282f;

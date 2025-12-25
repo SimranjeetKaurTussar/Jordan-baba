@@ -17,14 +17,12 @@ import SupportLiveChat from './components/SupportLiveChat/SupportLiveChat';
 function App() {
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
-      {/* Header Container */}
       <header className="flex flex-col w-full shadow-md">
         <TopBar />
         <MainHeader />
         <CategoryBar />
       </header>
 
-      {/* Hero Section Placeholder (to show contrast) */}
       <main className="max-w-7xl mx-auto px-4 py-12">
         <HeroSection />
         <ProductHero />

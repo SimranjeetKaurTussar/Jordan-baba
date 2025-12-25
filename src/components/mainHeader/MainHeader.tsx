@@ -1,8 +1,7 @@
-// src/components/MainHeader.tsx
-import React, { useState } from 'react';
-import { Search, Camera, User, FileText, LogIn } from 'lucide-react';
-import { motion } from 'framer-motion';
-import './MainHeader.scss';
+import React, { useState } from "react";
+import { Search, Camera, User, FileText, LogIn } from "lucide-react";
+import { motion } from "framer-motion";
+import "./MainHeader.scss";
 
 const MainHeader = () => {
   const [searchFocus, setSearchFocus] = useState(false);
@@ -11,14 +10,14 @@ const MainHeader = () => {
     <header className="main-header">
       <div className="container">
         <div className="main-header__wrapper">
-          
-          {/* Logo Section */}
           <div className="main-header__logo">
-              <img src="https://jordanbaba.com/assets/jordanbaba/jordanbaba-logo.svg" alt="JORDANBABA" />
+            <img
+              src="https://jordanbaba.com/assets/jordanbaba/jordanbaba-logo.svg"
+              alt="JORDANBABA"
+            />
           </div>
 
-          {/* Search Bar */}
-          <div className={`main-header__search ${searchFocus ? 'active' : ''}`}>
+          <div className={`main-header__search ${searchFocus ? "active" : ""}`}>
             <input
               type="text"
               placeholder="Enter a keyword to search products..."
@@ -26,7 +25,10 @@ const MainHeader = () => {
               onFocus={() => setSearchFocus(true)}
               onBlur={() => setSearchFocus(false)}
             />
-            <button className="main-header__search-camera" aria-label="Image Search">
+            <button
+              className="main-header__search-camera"
+              aria-label="Image Search"
+            >
               <Camera size={18} />
             </button>
             <button className="main-header__search-btn">
@@ -35,23 +37,18 @@ const MainHeader = () => {
             </button>
           </div>
 
-          {/* Action Items */}
           <div className="main-header__actions">
-            <ActionItem 
-              icon={User} 
-              title="Become a" 
-              subtitle="Supplier" 
+            <ActionItem icon={User} title="Become a" subtitle="Supplier" />
+            <ActionItem
+              icon={FileText}
+              title="Request for"
+              subtitle="Quotations"
             />
-            <ActionItem 
-              icon={FileText} 
-              title="Request for" 
-              subtitle="Quotations" 
-            />
-            <ActionItem 
-              icon={LogIn} 
-              title="Welcome" 
-              subtitle="Sign In / Register" 
-              highlight 
+            <ActionItem
+              icon={LogIn}
+              title="Welcome"
+              subtitle="Sign In / Register"
+              highlight
             />
           </div>
         </div>
@@ -67,14 +64,14 @@ interface ActionItemProps {
   highlight?: boolean;
 }
 
-const ActionItem: React.FC<ActionItemProps> = ({ 
-  icon: Icon, 
-  title, 
-  subtitle, 
-  highlight 
+const ActionItem: React.FC<ActionItemProps> = ({
+  icon: Icon,
+  title,
+  subtitle,
+  highlight,
 }) => (
-  <motion.button 
-    className={`action-item ${highlight ? 'action-item--highlight' : ''}`}
+  <motion.button
+    className={`action-item ${highlight ? "action-item--highlight" : ""}`}
     whileHover={{ y: -2 }}
     whileTap={{ y: 0 }}
   >

@@ -10,7 +10,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   background-color: #f9f9f9;
   color: #1a1a1a;
   line-height: 1.6;
@@ -31,7 +33,9 @@ button {
   font-family: inherit;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
 }
@@ -296,4 +300,4 @@ input, select, textarea {
   .action-item__title {
     font-size: 10px;
   }
-}/*# sourceMappingURL=MainHeader.css.map */
+} /*# sourceMappingURL=MainHeader.css.map */
